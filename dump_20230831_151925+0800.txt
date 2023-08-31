@@ -1,0 +1,40 @@
+When: 2023-08-31T15:19:25.680926+08:00
+
+ === Critical info (given by user): 0 bytes ===
+
+will not explore other threads (disabled by user)
+
+Thread 7de2 8001
+(crashed here)
+0x55830483d645
+0x55830483f4d8
+0x55830483f9ac
+0x55830483fd21
+0x7f3aaf6a5f10
+0x7f3aaf7f1bf0
+0x7f3ab013fc6a
+0x558304815aa2
+0x55830480be7b
+0x55830480c775
+0x55830480abba
+0x55830480cd13
+0x7f3aaf688c87
+0x55830480a2aa
+
+
+Thread 7de2 (8001) (crashed here)
+
+#0  0x000000000003f4d8 in SimpleLoggerMgr::addRawStackInfo(bool) at ??:?
+#1  0x000000000003f9ac in SimpleLoggerMgr::logStackBacktrace(unsigned long) at ??:?
+#2  0x000000000003fd21 in SimpleLoggerMgr::handleSegFault(int) at ??:?
+#3  0x000000000003ef10 in killpg() at ??:?
+#4  0x000000000018abf0 in __nss_passwd_lookup() at /build/glibc-CVJwZb/glibc-2.27/string/../sysdeps/x86_64/multiarch/memcmp-avx2-movbe.S:217
+#5  0x00007f3ab013fc6a in _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7compareEPKc() at ??:0
+#6  0x0000000000015aa2 in bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) at ??:?
+#7  0x000000000000be7b in kv_server::print_lsm(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) at ??:?
+#8  0x000000000000c775 in kv_server::do_cmd(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) at ??:?
+#9  0x000000000000abba in kv_server::loop() at ??:?
+#10 0x000000000000cd13 in main() at ??:?
+#11 0x00007f3aaf688c87 in __libc_start_main() at ??:0
+#12 0x000000000000a2aa in _start() at ??:?
+
