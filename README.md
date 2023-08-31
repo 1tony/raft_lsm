@@ -14,7 +14,7 @@
 * 安装nuraft成功后，进行编译即可
 
     ```shell 
-    g++ -o kv_server kv_server.cxx in_memory_log_store.cxx logger.cc -lnuraft -lssl -lpthread
+    g++ -o kv_server kv_server.cxx raft/in_memory_log_store.cxx raft/logger.cc -lnuraft -lssl -lpthread
     ```
 * 例子
     - 启动一个server(server_id:3)

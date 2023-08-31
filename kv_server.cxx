@@ -15,9 +15,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **************************************************************************/
 //g++ -o kv kv_server.cxx in_memory_log_store.cxx logger.cc -lnuraft -lssl -lpthread
-#include "kv_state_machine.hxx"
-#include "in_memory_state_mgr.hxx"
-#include "logger_wrapper.hxx"
+#include "raft/kv_state_machine.hxx"
+#include "raft/in_memory_state_mgr.hxx"
+#include "raft/logger_wrapper.hxx"
 
 #include "libnuraft/nuraft.hxx"
 
@@ -38,7 +38,7 @@ static raft_params::return_method_type CALL_TYPE
 
 static bool ASYNC_SNAPSHOT_CREATION = false;
 
-#include "example_common.hxx"
+#include "raft/example_common.hxx"
 
 kv_state_machine* get_sm() {
     return static_cast<kv_state_machine*>( stuff.sm_.get() );

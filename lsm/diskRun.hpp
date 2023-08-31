@@ -127,16 +127,12 @@ public:
         
     }
     void constructIndex(){
-        // construct fence pointers and write BF
-//        _fencePointers.resize(0);
-// 所有的数据是经过排序的
-// 根据页大小，找到每个页最后一个key，并存到_fencePointer
         _fencePointers.reserve(_capacity / pageSize);//容量/pagesize = page的页数
-        _iMaxFP = -1; // TODO IS THIS SAFE?
+        _iMaxFP = -1; 
         for (int j = 0; j < _capacity; j++) { //将所有页都遍历一遍：bf好像是用来记录日志的
             //bf.add((K*) &map[j].key, sizeof(K)); //获取获取已经被转移的key值
             if (j % pageSize == 0){
-                _fencePointers.push_back(map[j].key); //只存一个？
+                _fencePointers.push_back(map[j].key); 
                 _iMaxFP++;//指针+1
             }
         }
@@ -194,7 +190,7 @@ public:
                     if (key < _fencePointers[middle + 1]){
                         start = middle * pageSize;
                         end = (middle + 1) * pageSize;
-                        return; // TODO THIS IS ALSO GROSS
+                        return; 
                     }
                     min = middle + 1;
                 }
@@ -202,7 +198,7 @@ public:
                     if (key >= _fencePointers[middle - 1]){
                         start = (middle - 1) * pageSize;
                         end = middle * pageSize;
-                        return; // TODO THIS IS ALSO GROSS. THIS WILL BREAK IF YOU DON'T KEEP TRACK OF MIN AND MAX.
+                        return; 
                     }
                     max = middle - 1;
                 }

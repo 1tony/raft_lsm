@@ -18,7 +18,7 @@ limitations under the License.
 #pragma once
 
 #include "libnuraft/nuraft.hxx"
-#include"lsm.hpp"
+#include"../lsm/lsm.hpp"
 #include <atomic>
 #include <cassert>
 #include <iostream>
