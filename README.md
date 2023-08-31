@@ -23,6 +23,7 @@
         ```shell
         ./kv_server 3 localhost:10003
         ```
+        ![](image/1.png)
     - 将一个新的server（server_id:2）加入到server_id为3的集群中
         - 指令格式：**add 【server_id】【localhost:10002】**
             ```shell
@@ -32,6 +33,7 @@
             ```shell
             ls
             ```
+            ![](image/2.png)
     - 添加新值
         - 指令格式：**put key value**
             ```shell
@@ -47,22 +49,13 @@
             lsm g 1
             lsm r 1 3
             ```
-[](./image/3.png)
+            ![](./image/3.png)
 
 # Docs
 
-* Read [overview](./docs/cn/overview.md) to know what you can do with braft.
-* Read [benchmark](./docs/cn/benchmark.md) to have a quick view about performance of braft
-* [Build Service based on braft](./docs/cn/server.md)
-* [Access Service based on braft](./docs/cn/client.md)
-* [Cli tools](./docs/cn/cli.md)
-* [Replication Model](./docs/cn/replication.md)
-* Consensus protocol:
-  * [RAFT](./docs/cn/raft_protocol.md)
-  * [Paxos](./docs/cn/paxos_protocol.md)
-  * [ZAB](./docs/cn/zab_protocol.md)
-  * [QJM](./docs/cn/qjm.md)
+* nuraft中源码的注释理解 https://blog.csdn.net/weixin_43623525?type=blog
+* raft论文 https://github.com/maemual/raft-zh_cn
 
 # Discussion
 
-* Add Weixin id ***zhengpf__87*** or ***xiongk_2049*** with a verification message '**braft**', then you will be invited into the discussion group. 
+* 
